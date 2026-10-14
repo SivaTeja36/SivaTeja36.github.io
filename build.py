@@ -23,33 +23,48 @@ SUMMARY = ("Software Engineer with 3+ years of experience across full stack deve
 EMAIL = "vantasivateja@gmail.com"
 GITHUB = "https://github.com/SivaTeja36"
 LINKEDIN = "https://www.linkedin.com/in/siva-teja-vanta-99213b257/"
-LOCATION = "India"
+LOCATION = "Bengaluru, India"
 
 STATS = [("3+", "Years of experience"), ("9", "Production projects"), ("3", "Domains: Cloud · Backend · AI/ML")]
 
 FACTS = [
     ("Role", "Software Engineer @ NSP Product Engineering Services"),
-    ("Since", "2022 — Present"),
+    ("Since", "May 2023 · intern → associate → engineer"),
     ("Education", "B.Tech, Mechanical Engineering (2018 — 2022)"),
-    ("Origin", "India · open to remote"),
+    ("Origin", "Bengaluru, India · open to remote"),
     ("Focus", "FastAPI · PostgreSQL · Azure IaC · LangChain"),
     ("Status", "Building + Learning + Shipping"),
 ]
 
-EXPERIENCE = [dict(
-    role="Software Engineer", org="NSP Product Engineering Services", where="India", when="2022 — Present",
-    bullets=[
-        "Designed and delivered end-to-end backend systems with Python and FastAPI across HR-tech, notification, AI/ML and cloud infrastructure projects.",
-        "Built and deployed cloud-native applications on Azure: Container Apps, API Management, Front Door, Static Web Apps, Functions and Storage Accounts, secured with Private Endpoints.",
-        "Authored Terraform modules to provision and manage Azure infrastructure across dev, QA and production as version-controlled Infrastructure as Code.",
-        "Designed PostgreSQL schemas and data-access layers for multi-tenant, high-throughput backend services.",
-        "Developed AI features: computer-vision pipelines, RAG chatbots and Text-to-SQL agents integrating LLMs, vector databases and embedding models.",
-        "Partnered with analytics, engineering and business stakeholders to turn requirements into production-ready systems.",
-    ],
-)]
+EXPERIENCE = [
+    dict(role="Software Engineer", org="NSP Product Engineering Services", where="Bengaluru, India", when="Oct 2025 — Present",
+         bullets=[
+             "Promoted from Associate Software Engineer; own backend and cloud architecture end to end across HR-tech, computer-vision and robotics platforms.",
+             "Designed the Azure architecture for the AI Robot Trainer platform: Front Door, Static Web Apps, API Management, Container Apps, Functions, Private Endpoints.",
+             "Author Terraform modules that provision dev, QA and production as version-controlled Infrastructure as Code; CI/CD on Azure DevOps.",
+             "Build AI-enabled features: computer-vision training pipelines, RAG chatbots on PgVector, and Text-to-SQL agents with LangChain.",
+         ]),
+    dict(role="Associate Software Engineer", org="NSP Product Engineering Services", where="Bengaluru, India", when="Aug 2023 — Oct 2025",
+         bullets=[
+             "Backend developer on Python / FastAPI services: REST API design, SQLAlchemy and Alembic, Pytest, Dockerised environments.",
+             "Built the multi-tenant HireAssisto recruitment backend, the Notify campaign platform and the shared Email / WhatsApp / SMS notification service on RabbitMQ.",
+             "Designed PostgreSQL schemas and data-access layers for multi-tenant, high-throughput services; shipped the open-source FastAPI multitenant framework.",
+             "Delivered AI features in product: Assisto Text-to-SQL agents, RAG bots, and the DeepFace / OpenCV attendance system.",
+             "Received the Performance Excellence Award and the Collaboration Award.",
+         ]),
+    dict(role="Software Engineering Intern", org="NSP Product Engineering Services", where="Bengaluru, India", when="May 2023 — Aug 2023",
+         bullets=[
+             "Joined as a Python intern and converted to full-time within three months.",
+             "Built and tested FastAPI endpoints on two production projects under senior review; learned the team's PostgreSQL, Git and Agile practices.",
+         ]),
+]
 
 AWARDS = [("Performance Excellence Award", "NSP Product Engineering Services — consistent high-quality delivery"),
           ("Collaboration Award", "NSP Product Engineering Services — effective cross-functional teamwork")]
+LEARNING = [("Agile Scrum certification", "NSP"),
+            ("Build Your Own GPT · High-level & low-level design", "Scaler masterclasses"),
+            ("Embeddings & RAG session", "vector search, nearest neighbours, retrieval-augmented generation"),
+            ("Namaste JavaScript", "Akshay Saini — closures, event loop, async JS")]
 
 # (title, kicker, description, tech chips, link or None, accent)
 PROJECTS = [
@@ -206,6 +221,7 @@ def hero():
 def about():
     facts = "".join(f'<div class="fact reveal"><span class="fk">{e(k)}</span><span class="fv">{e(v)}</span></div>' for k, v in FACTS)
     awards = "".join(f'<li class="reveal"><strong>{e(t)}</strong><span>{e(d)}</span></li>' for t, d in AWARDS)
+    learning = "".join(f'<li class="reveal alt"><strong>{e(t)}</strong><span>{e(d)}</span></li>' for t, d in LEARNING)
     return f'''<section id="about" class="section">
   {section_head("ABOUT", "What I build", "End-to-end ownership from architecture through deployment across HR-tech, notification, computer-vision and robotics platforms.")}
   <div class="about-grid">
@@ -219,6 +235,8 @@ def about():
       <div class="facts">{facts}</div>
       <span class="eyebrow" style="margin-top:22px">// AWARDS</span>
       <ul class="awards">{awards}</ul>
+      <span class="eyebrow" style="margin-top:22px">// LEARNING</span>
+      <ul class="awards">{learning}</ul>
     </aside>
   </div>
 </section>'''
